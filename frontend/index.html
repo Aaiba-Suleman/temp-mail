@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📧 Temporary Email Simulator</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1 id="title">📧 Temporary Email Simulator</h1>
+    <button id="themeToggle" class="mini-btn">🌙 Dark Mode</button>
+  </header>
+
+  <main class="main-container">
+
+    <!-- LEFT PANEL -->
+    <section class="left-panel">
+
+      <div class="top-controls">
+        <div class="control-group">
+          <label for="addressInput">Custom Inbox:</label>
+          <input id="addressInput" placeholder="Enter custom inbox" />
+        </div>
+
+        <div class="control-group">
+          <label for="domainSelect">Select Domain:</label>
+          <select id="domainSelect">
+            <option value="@tempmail.demo">@tempmail.demo</option>
+            <option value="@tempmail1.com">@tempmail1.com</option>
+            <option value="@tempmail2.net">@tempmail2.net</option>
+          </select>
+        </div>
+      </div>
+
+      <button id="createBtn" class="main-btn">➕ Create Inbox</button>
+      <p id="createdInfo"></p>
+      <p id="countdown"></p>
+
+      <div class="action-buttons">
+        <button id="refreshBtn" class="mini-btn">🔄 Refresh</button>
+      </div>
+
+      <div class="custom-message-inputs">
+        <input type="text" id="customSubject" placeholder="Enter Subject" />
+        <textarea id="customBody" placeholder="Enter Message Body"></textarea>
+      </div>
+
+      <div class="action-buttons">
+        <button id="simulateBtn" class="mini-btn">📨 Simulate Receive</button>
+        <button id="deleteInboxBtn" class="danger mini-btn">🗑 Delete Inbox</button>
+        <button id="getDemoCardBtn" class="mini-btn">💳 Generate Demo Card</button>
+      </div>
+
+      <h2 class="section-title">📥 Inbox <span id="newBadge" class="badge">0</span></h2>
+      <ul id="messageList" class="message-list"></ul>
+
+      <!-- ADDED HEADING ABOVE EXISTING DEMO CARD -->
+      <h2 class="section-title" >💳 Demo Card</h2>
+
+      <!-- ORIGINAL DEMO CARD (kept same) -->
+      <div id="demoCard" class="demo-card"></div>
+
+    </section>
+
+    <!-- RIGHT PANEL -->
+    <section class="right-panel">
+      <h2 class="section-title">📧 Email Viewer</h2>
+      <div class="message-box">
+        <h3 id="msgSubject">No message selected</h3>
+        <p id="msgFrom"></p>
+        <p id="msgDate"></p>
+        <div id="msgBody" class="msg-body">No message selected</div>
+
+        <div class="reply-container">
+          <textarea id="replyInput" class="reply-input" placeholder="Type your reply"></textarea>
+          <button id="replyBtn" class="reply-btn">Reply</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="lang-buttons">
+      <button id="enFooterBtn" class="lang-btn">EN</button>
+      <button id="urFooterBtn" class="lang-btn">UR</button>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

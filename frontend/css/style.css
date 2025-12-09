@@ -1,0 +1,381 @@
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f3f5f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+  background: #4b7bec;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+#themeToggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* MAIN LAYOUT */
+.main-container {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  flex: 1;
+}
+
+/* LEFT PANEL */
+.left-panel {
+  width: 32%;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.top-controls, .custom-message-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.control-group label {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.control-group input, 
+.control-group select,
+.custom-message-inputs input,
+.custom-message-inputs textarea {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #bbb;
+  font-size: 14px;
+  width: 100%;
+}
+
+.custom-message-inputs textarea {
+  resize: vertical;
+}
+
+.main-btn, .mini-btn, .reply-btn {
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+
+.main-btn {
+  background: #3867d6;
+  color: white;
+  padding: 12px;
+  margin-top: 10px;
+}
+
+.main-btn:hover {
+  background: #274c9d;
+}
+
+.mini-btn {
+  background: #20bf6b;
+  color: white;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.mini-btn:hover {
+  background: #158a4d;
+}
+
+.danger {
+  background: #fc5c65;
+}
+
+.danger:hover {
+  background: #c64444;
+}
+
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+/* MESSAGE LIST */
+.section-title {
+  margin: 15px 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.message-list {
+  list-style: none;
+  max-height: 250px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 5px;
+  background: #fafafa;
+}
+
+.message-list li {
+  padding: 8px;
+  background: white;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  transition: 0.2s;
+}
+
+.message-list li:hover {
+  background: #eaf0ff;
+}
+
+/* RIGHT PANEL */
+.right-panel {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* MESSAGE BOX */
+.message-box {
+  background: #f9fbff;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* MESSAGE BODY */
+.msg-body {
+  white-space: pre-wrap;
+  overflow-y: auto;
+  max-height: 200px;
+  background: #ffffff; /* clean white box for email body */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+/* REPLY */
+.reply-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.reply-input {
+  width: 100%;
+  min-height: 60px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #bbb;
+}
+
+.reply-btn {
+  align-self: flex-start;
+  padding: 6px 12px;
+  background: #3867d6;
+  color: white;
+}
+
+.reply-btn:hover {
+  background: #274c9d;
+}
+
+/* BADGE */
+.badge {
+  background: #fc5c65;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  vertical-align: top;
+  margin-left: 5px;
+}
+
+/* DEMO CARD */
+.demo-card {
+  margin-top: 15px;
+  padding: 10px;
+  background: #f0f0f0; /* changed from yellow to light grey */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* FOOTER */
+.footer {
+  background: #4b7bec;
+  height: 40px;
+  position: relative;
+}
+
+.footer .lang-buttons {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.lang-btn {
+  background: #fff;
+  color: #4b7bec;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* LIGHT/DARK MODE */
+/* LIGHT/DARK MODE */
+body.dark-mode {
+  background: #222;
+  color: #eee;
+}
+
+body.dark-mode .left-panel,
+body.dark-mode .right-panel {
+  background: #333;
+  color: #eee;
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background: #555;
+  color: #fff;
+  border: 1px solid #888;
+}
+
+body.dark-mode .message-list li {
+  background: #444;
+  border: 1px solid #666;
+  color: #eee;
+}
+
+body.dark-mode .message-list li:hover {
+  background: #555;
+}
+
+body.dark-mode .msg-body {
+  background: #444;
+  border: 1px solid #666;
+  color: #eee;
+}
+
+body.dark-mode .demo-card {
+  background: #555;
+  border: 1px solid #888;
+  color: #eee;
+}
+
+/* Keep message header text visible in dark mode */
+body.dark-mode #msgSubject,
+body.dark-mode #msgFrom,
+body.dark-mode #msgDate {
+  color: black !important;
+}
+
+/* Optional: make reply input text visible */
+body.dark-mode #replyInput {
+  color: #000;
+  background: #eee;
+  border: 1px solid #888;
+}
+
+/* Footer language buttons */
+body.dark-mode .lang-btn {
+  background: #eee;
+  color: #222;
+  border: 1px solid #ccc;
+}
+/* LIGHT/DARK MODE */
+body.dark-mode {
+  background: #222;
+  color: #eee;
+}
+
+body.dark-mode .left-panel,
+body.dark-mode .right-panel {
+  background: #333;
+  color: #eee;
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background: #555;
+  color: #fff;
+  border: 1px solid #888;
+}
+
+body.dark-mode .message-list li {
+  background: #444;
+  border: 1px solid #666;
+  color: #eee;
+}
+
+body.dark-mode .message-list li:hover {
+  background: #555;
+}
+
+body.dark-mode .msg-body {
+  background: #444;
+  border: 1px solid #666;
+  color: #eee;
+}
+
+body.dark-mode .demo-card {
+  background: #555;
+  border: 1px solid #888;
+  color: #eee;
+}
+
+/* Keep message header text visible in dark mode */
+body.dark-mode #msgSubject,
+body.dark-mode #msgFrom,
+body.dark-mode #msgDate {
+  color: black !important;
+}
+
+/* Optional: make reply input text visible */
+body.dark-mode #replyInput {
+  color: #000;
+  background: #eee;
+  border: 1px solid #888;
+}
+
+/* Footer language buttons */
+body.dark-mode .lang-btn {
+  background: #eee;
+  color: #222;
+  border: 1px solid #ccc;
+}
